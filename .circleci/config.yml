@@ -12,10 +12,9 @@ jobs:
     JVM_OPTS: -Xmx3200m
     steps:
         - checkout
-      #  - run:
-      #    name: Download Dependencies
-      #    command: ./gradlew androidDependencies
-      #    key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+        - run:
+          name: Build
+          command: ./gradlew clean build
       #  - run:
       #    name: Run Tests
       #    command: ./gradlew lint test
