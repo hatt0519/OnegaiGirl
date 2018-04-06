@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-26-alpha
+    environment:
+    dependencies:
+      pre:
+        - mkdir $ANDROID_HOME/licenses
+        - cat android-sdk-license > $ANDROID_HOME/licenses/android-sdk-license
+    JVM_OPTS: -Xmx3200m
+    steps:
+        - checkout
+        - run:
+            name: Build
+            command: ./gradlew clean build
+        - run:
+            name: Run Tests
+            command: ./gradlew lint test
