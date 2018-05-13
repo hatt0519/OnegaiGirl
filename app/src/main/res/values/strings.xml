@@ -3,4 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="bottom_navigation_home">ホーム</string>
+    <string name="bottom_navigation_list">リスト</string>
+    <string name="bottom_navigation_girl">女の子一覧</string>
+    <string name="mock_message">%sは実装中だお</string>
 </resources>
