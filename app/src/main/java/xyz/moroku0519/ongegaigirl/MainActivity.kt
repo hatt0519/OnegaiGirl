@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupBottomNavigation(bottomNavigationView: BottomNavigationView) {
         bottomNavigationView.setOnNavigationItemSelectedListener({ it ->
             when (it.itemId) {
-                R.id.home    -> {
+                R.id.home -> {
                     navigateToHome()
                 }
                 R.id.list -> {
