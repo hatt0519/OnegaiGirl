@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToList() {
-        replaceFragment(MockFragment.newInstance())
+        replaceFragment(MockFragment.newInstance("一覧"))
     }
 
     private fun navigateToGirls() {
-        replaceFragment(MockFragment.newInstance())
+        replaceFragment(MockFragment.newInstance("女の子一覧"))
     }
 
     private fun replaceFragment(fragment: Fragment) {
