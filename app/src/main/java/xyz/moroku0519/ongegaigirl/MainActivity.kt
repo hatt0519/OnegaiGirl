@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import xyz.moroku0519.ongegaigirl.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,13 +14,14 @@ class MainActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).apply {
             setupBottomNavigation(bottomNavigation)
         }
+        navigateToHome()
     }
 
     private fun setupBottomNavigation(bottomNavigationView: BottomNavigationView) {
         bottomNavigationView.setOnNavigationItemSelectedListener({ it ->
             when (it.itemId) {
-                R.id.home -> {
-                    Log.d("home", "home, selected")
+                R.id.home    -> {
+                    navigateToHome()
                 }
                 R.id.list -> {
                     navigateToList()
@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         })
+    }
+
+    private fun navigateToHome() {
+        replaceFragment(MockFragment.newInstance("ホーム"))
     }
 
     private fun navigateToList() {
