@@ -6,4 +6,5 @@
     <string name="bottom_navigation_home">ホーム</string>
     <string name="bottom_navigation_list">リスト</string>
     <string name="bottom_navigation_girl">女の子一覧</string>
+    <string name="mock_message">この画面は実装中だお</string>
 </resources>

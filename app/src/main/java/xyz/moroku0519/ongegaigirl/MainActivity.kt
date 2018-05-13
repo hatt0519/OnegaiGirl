@@ -3,6 +3,7 @@ package xyz.moroku0519.ongegaigirl
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import xyz.moroku0519.ongegaigirl.databinding.ActivityMainBinding
@@ -23,14 +24,34 @@ class MainActivity : AppCompatActivity() {
                     Log.d("home", "home, selected")
                 }
                 R.id.list -> {
-                    Log.d("list", "clicked")
+                    navigateToList()
                 }
                 R.id.girl -> {
-                    Log.d("girl", "clicked")
+                    navigateToGirls()
                 }
             }
             true
         })
     }
+
+    private fun navigateToList() {
+        replaceFragment(MockFragment.newInstance())
+    }
+
+    private fun navigateToGirls() {
+        replaceFragment(MockFragment.newInstance())
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        var transaction = supportFragmentManager.beginTransaction()
+                .replace(R.id.content, fragment)
+
+        if (supportFragmentManager.isStateSaved) {
+            transaction.commitAllowingStateLoss()
+        } else {
+            transaction.commit()
+        }
+    }
+
 }
 
