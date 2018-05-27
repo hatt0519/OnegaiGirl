@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToHome() {
-        replaceFragment(MockFragment.newInstance("ホーム"))
+        replaceFragment(HomeFragment.newInstance())
     }
 
     private fun navigateToList() {
