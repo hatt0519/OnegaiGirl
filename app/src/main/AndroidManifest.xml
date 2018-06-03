@@ -23,6 +23,10 @@
             android:name=".MockActivity"
             android:exported="false"
             android:label="実装中な画面" />
+        <activity
+            android:name=".AddShopItemActivity"
+            android:exported="false"
+            android:label="買い物アイテム追加" />
     </application>
 
 </manifest>
